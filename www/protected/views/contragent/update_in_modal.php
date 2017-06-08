@@ -42,6 +42,7 @@
                                 ?>
 
 
+
                                 <div class="row">
 
                                     <div class="col-md-1">
@@ -390,6 +391,7 @@
 
                                         <?php
 
+
                                         echo CHtml::ajaxSubmitButton(
                                             $model_contragent->isNewRecord ? 'Создать' : 'Сохранить', '',
                                             /*  CHtml::normalizeUrl(array('objectrabot/create','render'=>true)) ,*/
@@ -398,6 +400,7 @@
                                                 'type' => 'post',
                                                 // 'data'=>'',
                                                 'success' => 'js:function(response){
+
                                                       if(response.status === "true"){
                                                       jQuery("body #notifier_success_contragent_info").html(response.message).show("fast").hide(10000);
                                                      // jQuery("body #Contragent_id").val(response.id);
@@ -412,6 +415,7 @@
                                                     jQuery("body #notifier_error_contragent_info").html(error_list).show("slow").hide(10000);
                                                         }
                                                          }',
+<<<<<<< HEAD
                                                 'error' => 'js:function(response){
                                                     alert(response);
                                                           }',
@@ -424,6 +428,20 @@
                                                 // 'id' => 'form_submit_' . new Date() . getTime(),// чтобы точно было уникальное айди кнопки сабмит-+++
                                                 'class' => 'btn btn-primary',
                                             ));
+=======
+                                                    'error' => 'js:function(response){
+                                                    alert(response);
+                                                          }',
+
+                                                ),
+                                                array(
+                                                    // Меняем тип элемента на submit, чтобы у пользователей с отключенным JavaScript всё было хорошо.
+                                                    'type' => 'submit',
+                                                    'id' => 'form_submit_' . rand(1, 50000),// рандомный айди для удаления дублей при аджаксе, костыль
+                                                    // 'id' => 'form_submit_' . new Date() . getTime(),// чтобы точно было уникальное айди кнопки сабмит-+++
+                                                    'class' => 'btn btn-primary',
+                                                ));
+>>>>>>> 0a053495e5264870e8c0d6af12ab22d52eda7d76
 
                                         ?>
                                     </div>
@@ -448,6 +466,10 @@
                             <?php
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0a053495e5264870e8c0d6af12ab22d52eda7d76
                             ?>
                             <div class="tab-pane" id="bank_list">
 

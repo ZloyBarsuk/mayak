@@ -415,8 +415,7 @@ class Dogovor extends CActiveRecord
     }
 
 
-    private
-    function MakeDirectory() //$path,$pdf
+    private function MakeDirectory() //$path,$pdf
     {
 
         $separator = "/";
@@ -468,8 +467,7 @@ class Dogovor extends CActiveRecord
 
     }
 
-    public
-    function RecreateALL() //$path,$pdf
+    public function RecreateALL() //$path,$pdf
     {
 
         $dogovor_model = Dogovor::model()->findAll();
@@ -491,8 +489,7 @@ class Dogovor extends CActiveRecord
 
     }
 
-    public
-    function MakeDirectoryAll() //$path,$pdf
+    public function MakeDirectoryAll() //$path,$pdf
     {
 
         $dogovor_model = Dogovor::model()->findAll();
@@ -561,8 +558,7 @@ class Dogovor extends CActiveRecord
     }
 
 
-    public
-    function ProsrocheniyDogovor()
+    public function ProsrocheniyDogovor()
     {
         $criteria = new CDbCriteria;
         // DATEDIFF(NOW(),t.srok_ispolneniya) AS
@@ -612,8 +608,7 @@ class Dogovor extends CActiveRecord
     }
 
 
-    public
-    function VidiRabot()
+    public function VidiRabot()
     {
         $spr_vid = Yii::app()->db->createCommand()
             ->select('spr_vid.naimenovaniye')
@@ -628,8 +623,7 @@ class Dogovor extends CActiveRecord
     }
 
 
-    public
-    function CheckZakritiye($old_status)
+    public function CheckZakritiye($old_status)
     {
         $notify = '';
 
@@ -661,8 +655,7 @@ class Dogovor extends CActiveRecord
      * @return CActiveDataProvider the data provider that can return the models
      * based on the search/filter conditions.
      */
-    public
-    function search()
+    public function search()
     {
         // @todo Please modify the following code to remove attributes that should not be searched.
 
@@ -785,9 +778,8 @@ class Dogovor extends CActiveRecord
      * @return Dogovor the static model class
      */
 
-// добавляем дополниетльные атрибуты к можели
-    public
-    function AddAttributes()
+    // добавляем дополниетльные атрибуты к можели
+    public function AddAttributes()
     {
         //  $this->created_date = date("Y-m-d");
 
@@ -802,7 +794,8 @@ class Dogovor extends CActiveRecord
 
     }
 
-// генерируем новый номер договора первая версия
+
+    // генерируем новый номер договора первая версия
 
     /* private function NumberGenerator()
      {
@@ -826,8 +819,7 @@ class Dogovor extends CActiveRecord
 
 
 // генерируем новый номер договора
-    private
-    function NumberGenerator()
+    private function NumberGenerator()
     {
         $gradation = 1;
         $separator = '';
@@ -852,8 +844,7 @@ class Dogovor extends CActiveRecord
         return $new_dogovor_number = (string)$this->id_ispolnitel . $separator . $curr_year . $separator . $veduchiy_nol . $separator . $number;
     }
 
-    private
-    function CountSrokDney()
+    private function CountSrokDney()
     {
 
         if (!empty($this->srok_dni)) {
@@ -896,8 +887,7 @@ class Dogovor extends CActiveRecord
     }
 
 
-    public
-    function CheckUserIsOwner()
+    public function CheckUserIsOwner()
     {
         if ($this->block == 'Y' && $this->opened_by_id !== Yii::app()->user->id) {
             return true;
@@ -907,8 +897,7 @@ class Dogovor extends CActiveRecord
     }
 
 
-    public
-    function CheckIfBlocked()
+    public function CheckIfBlocked()
     {
         if ($this !== null && $this->opened_by_id == Yii::app()->user->id && $this->block == 'Y') {
             return true;
@@ -918,24 +907,21 @@ class Dogovor extends CActiveRecord
     }
 
 
-    public
-    function BlockDogovor()
+    public function BlockDogovor()
     {
         $this->opened_by_id = Yii::app()->user->id;
         $this->block = 'N'; // must be Y
         $this->update(array('opened_by_id', 'block'));
     }
 
-    public
-    function UnblockDogovor()
+    public function UnblockDogovor()
     {
         $this->opened_by_id = '';
         $this->block = 'N';
         $this->update(array('opened_by_id', 'block'));
     }
 
-    public
-    static function model($className = __CLASS__)
+    public static function model($className = __CLASS__)
     {
         return parent::model($className);
     }

@@ -35,15 +35,17 @@
                                 <?php //echo $form->labelEx($model, 'id_objecta'); ?>
                                 <?php echo $form->hiddenField($model, 'id_objecta', array('class' => 'form-control')); ?>
                                 <?php echo $form->error($model, 'id_objecta'); ?>
+
+
                             </div>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-12">
 
-                            <div class="col-md-5">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <?php echo $form->labelEx($model, 'id_spr_etap_rabot'); ?>
                                     <?php // echo $form->textField($model, 'id_spr_etap_rabot', array('class' => 'form-control')); ?>
-                                    <?php echo CHtml::activeDropDownList($model, 'id_spr_etap_rabot', CHtml::listData(SprEtapRabot::model()->findAllByAttributes(array('actualnost' => 1), array('order' => 'etap_rabot ASC')), 'id', 'etap_rabot'), array('empty' => 'Выбор этапа работ')); ?>
+                                    <?php echo CHtml::activeDropDownList($model, 'id_spr_etap_rabot', CHtml::listData(SprEtapRabot::model()->findAllByAttributes(array('actualnost' => 1),array('order'=>'etap_rabot ASC')), 'id', 'etap_rabot'), array('empty' => 'Выбор этапа работ')); ?>
 
                                     <?php echo $form->error($model, 'id_spr_etap_rabot'); ?>
                                 </div>
@@ -62,32 +64,29 @@
                             </div>
 
 
-
-
-                        </div>
-
-                        <div class="col-md-10">
-                        <div class="col-md-5">
-                            <div class="form-group">
-                                <?php echo $form->labelEx($model, 'data_nachala_rabot'); ?>
-                                <?php // echo $form->textField($model, 'data_nachala_rabot', array('class' => 'form-control')); ?>
-                                <?php echo $form->dateField($model, 'data_nachala_rabot', array('class' => 'form-control')); ?>
-                                <?php echo $form->error($model, 'data_nachala_rabot'); ?>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <?php echo $form->labelEx($model, 'data_nachala_rabot'); ?>
+                                    <?php // echo $form->textField($model, 'data_nachala_rabot', array('class' => 'form-control')); ?>
+                                    <?php echo $form->dateField($model, 'data_nachala_rabot', array('class' => 'form-control')); ?>
+                                    <?php echo $form->error($model, 'data_nachala_rabot'); ?>
+                                </div>
                             </div>
-                        </div>
 
 
-                        <div class="col-md-5">
-                            <div class="form-group">
-                                <?php echo $form->labelEx($model, 'data_okonchaniya_rabot'); ?>
-                                <?php // echo $form->textField($model, 'data_okonchaniya_rabot', array('class' => 'form-control')); ?>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <?php echo $form->labelEx($model, 'data_okonchaniya_rabot'); ?>
+                                    <?php // echo $form->textField($model, 'data_okonchaniya_rabot', array('class' => 'form-control')); ?>
 
-                                <?php echo $form->dateField($model, 'data_okonchaniya_rabot', array('class' => 'form-control')); ?>
+                                    <?php echo $form->dateField($model, 'data_okonchaniya_rabot', array('class' => 'form-control')); ?>
 
-                                <?php echo $form->error($model, 'data_okonchaniya_rabot'); ?>
+                                    <?php echo $form->error($model, 'data_okonchaniya_rabot'); ?>
+                                </div>
                             </div>
+
                         </div>
-                        </div>
+
                         <div class="col-md-10">
 
                             <div class="col-md-4">
