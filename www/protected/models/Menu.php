@@ -36,7 +36,7 @@ class Menu extends CActiveRecord
 			array('image_path', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_parent, icon_class, name, url, image_path', 'safe', 'on'=>'search'),
+			array('id, id_parent, icon_class, name, url, image_path,active', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,6 +63,7 @@ class Menu extends CActiveRecord
 			'name' => 'Название пункта',
 			'url' => 'Url путь ',
 			'image_path' => 'Image Path',
+            'active' => 'активный пункт',
 		);
 	}
 

@@ -33,7 +33,7 @@ class SideBarMenu extends CActiveRecord
 			array('name, url, image', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, id_parent, name, url, image', 'safe', 'on'=>'search'),
+			array('id, id_parent, name, url, image,active', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,6 +59,8 @@ class SideBarMenu extends CActiveRecord
 			'name' => 'Name',
 			'url' => 'Url',
 			'image' => 'Image',
+            'active' => 'active',
+
 		);
 	}
 

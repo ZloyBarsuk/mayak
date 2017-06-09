@@ -78,7 +78,13 @@
                                 <?php echo $form->error($model, 'image_path'); ?>
                             </div>
                         </div>
-
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <?php echo $form->labelEx($model, 'active'); ?>
+                                <?php echo $form->dropDownList($model, 'active',array('0'=>'Скрыть','1'=>'Показать'), array('prompt'=>'Выбор категории','class' =>'form-control')); ?>
+                                <?php echo $form->error($model, 'active'); ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
